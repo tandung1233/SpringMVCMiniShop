@@ -1,8 +1,5 @@
 package com.TanDung.controller;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.TanDung.entity.NhanVien;
-import com.TanDung.entity.SanPham;
 
 @Controller // Định danh cái trangchucontroller này là một Controller
 @RequestMapping("/")
@@ -146,30 +142,82 @@ public class TrangChuController {
 //		sanPham.setNhanVien(nhanVien);
 //		session.save(sanPham);
 		// Hoc one to many
-		SanPham sanPham = new SanPham();
-		sanPham.setTenSanPham("Banh my");
-		sanPham.setGiaTien("100.000 VND");
+//		SanPham sanPham = new SanPham();
+//		sanPham.setTenSanPham("Banh my");
+//		sanPham.setGiaTien("100.000 VND");
+//
+//		SanPham sanPham1 = new SanPham();
+//		sanPham1.setTenSanPham("Banh bao");
+//		sanPham1.setGiaTien("100.000 VND");
+//
+//		SanPham sanPham2 = new SanPham();
+//		sanPham2.setTenSanPham("Banh u");
+//		sanPham2.setGiaTien("100.000 VND");
+//
+//		Set<SanPham> sanPhams = new HashSet<SanPham>();
+//		sanPhams.add(sanPham);
+//		sanPhams.add(sanPham1);
+//		sanPhams.add(sanPham2);
+//
+//		NhanVien nhanVien = new NhanVien();
+//		nhanVien.setTenNhanVien("Le van banh");
+//		nhanVien.setTuoi(18);
+//
+//		nhanVien.setSanPhams(sanPhams);
+//
+//		session.save(nhanVien);
 
-		SanPham sanPham1 = new SanPham();
-		sanPham1.setTenSanPham("Banh bao");
-		sanPham1.setGiaTien("100.000 VND");
+		// Many to many
+// 1 Nhân viên có thể thêm nhiều sản phẩm
+//		SanPham sanPham = new SanPham();
+//		sanPham.setTenSanPham("Banh my");
+//		sanPham.setGiaTien("100.000 VND");
+//
+//		SanPham sanPham1 = new SanPham();
+//		sanPham1.setTenSanPham("Banh bao");
+//		sanPham1.setGiaTien("100.000 VND");
+//
+//		SanPham sanPham2 = new SanPham();
+//		sanPham2.setTenSanPham("Banh u");
+//		sanPham2.setGiaTien("100.000 VND");
+//
+//		Set<SanPham> sanPhams = new HashSet<SanPham>();
+//		sanPhams.add(sanPham);
+//		sanPhams.add(sanPham1);
+//		sanPhams.add(sanPham2);
+//
+//		NhanVien nhanVien = new NhanVien();
+//		nhanVien.setTenNhanVien("Le van banh");
+//		nhanVien.setTuoi(18);
+//
+//		nhanVien.setSanPhams(sanPhams);
+//
+//		session.save(nhanVien);
 
-		SanPham sanPham2 = new SanPham();
-		sanPham2.setTenSanPham("Banh u");
-		sanPham2.setGiaTien("100.000 VND");
+		// 1 sản phẩm có thể làm ra bởi nhiều nhân viên
+//		SanPham sanPham = new SanPham();
+//		sanPham.setTenSanPham("Banh bao chay");
+//		sanPham.setGiaTien("150.000 VND");
+//
+//		NhanVien nhanVien = new NhanVien();
+//		nhanVien.setTenNhanVien("Le van a");
+//		nhanVien.setTuoi(18);
+//		NhanVien nhanVien1 = new NhanVien();
+//		nhanVien1.setTenNhanVien("Le van b");
+//		nhanVien1.setTuoi(19);
+//		NhanVien nhanVien2 = new NhanVien();
+//		nhanVien2.setTenNhanVien("Le van c");
+//		nhanVien2.setTuoi(20);
+//
+//		Set<NhanVien> nhanViens = new HashSet<NhanVien>();
+//		nhanViens.add(nhanVien);
+//		nhanViens.add(nhanVien1);
+//		nhanViens.add(nhanVien2);
+//
+//		sanPham.setNhanVien(nhanViens);
 
-		Set<SanPham> sanPhams = new HashSet<SanPham>();
-		sanPhams.add(sanPham);
-		sanPhams.add(sanPham1);
-		sanPhams.add(sanPham2);
+//		session.save(sanPham);
 
-		NhanVien nhanVien = new NhanVien();
-		nhanVien.setTenNhanVien("Le van banh");
-		nhanVien.setTuoi(18);
-
-		nhanVien.setSanPhams(sanPhams);
-
-		session.save(nhanVien);
 		return "trangchu";
 	}
 
